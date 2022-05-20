@@ -23,15 +23,39 @@
     }
    
    //Selecting column from table
-   $colors = mysqli_query($link, "SELECT colors from colors
-                                  ORDER BY RAND()
-                                  LIMIT 1");
-   $items = mysqli_query($link, "SELECT items from items
-                                 ORDER BY RAND()
-                                 LIMIT 1");
-   $rank = mysqli_query($link, "SELECT ranking from ranking
-                                ORDER BY RAND()
-                                LIMIT 1");
+   // $colors = mysqli_query($link, "SELECT colors from colors
+   //                                ORDER BY RAND()
+   //                                LIMIT 1");
+   // $items = mysqli_query($link, "SELECT items from items
+   //                               ORDER BY RAND()
+   //                               LIMIT 1");
+   // $rank = mysqli_query($link, "SELECT ranking from ranking
+   //                              ORDER BY RAND()
+   //                              LIMIT 1");
+
+   
+   function get_data() {
+      global $link;
+
+      $randomdraw = rand(1, 24);
+      $search = mysqli_query($link, "SELECT * from colors ORDER BY id DESC");
+      
+      if(mysqli_num_rows($search) > 0) {
+          $row = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM colors WHERE id = $randomdraw"));
+          return $row;
+      }
+      else {
+          return $row = "";
+      }
+  }
+
+  
+  function parse_data($colors) {
+   echo($colors['colors']);
+       
+}
+
+  
 
 
 

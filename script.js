@@ -110,19 +110,17 @@ window.onclick = function(event) {
   }
 }
 
-// //call ajax
-// var ajax = new XMLHttpRequest();
-// var method = "GET"
-// var url = "connect.php"
-// var asynchronous = true;
-
-// ajax.open(method, url, asynchronous);
-// //sending ajax request
-// ajax.send();
-
-// //receiving response from connect.php
-// ajax.onreadystatechange = function()
-// {
-//   if (this.readyState == )
-// }
-
+$(function() {
+  $('#MyBtn').click(function() {
+    $.ajax({
+      'type': 'GET',
+      'url': 'connect.php',
+      'dataType': 'html',
+      'success': function(colors) {
+        $('#itm').html(colors)
+      }
+    }).fail(function() {
+      console.log(Failed);
+    })
+  })
+})

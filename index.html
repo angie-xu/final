@@ -12,12 +12,11 @@
 </head>
 <body>
     <div id="container">
-    <h1>Daily Horoscope</h1>
+    <h1><a href="">Daily Horoscope</a></h1>
     <p>Enter your zodiac to find out what your horoscope is!</p>
     
-    <form action='connect.php' method='get'>
     <input type="text" placeholder="Enter Zodiac" id="zodiac">
-    <button type="button" onclick="getInputValue();">Submit</button>
+    <button id="zodiac-click" type="button" onclick="getInputValue();">Submit</button>
 
         <br>
     <!-- Trigger/Open The Modal -->
@@ -56,23 +55,19 @@
 
     </div>
 
-
     <div id="small-container">
         <div id="div1"></div>
         <div id="div2">
-            <p>Your lucky item is:</p>
-            <div id="itm"></div>
-            <br>
-            <p>Your lucky color is:</p>
-            <div id="clr"></div>
-            <br>
-            <p>Rank:</p>
-            <div id="rk"></div>
+            <h4 id="luckyitem"></h4>
+            <div class="space" id="itm"></div>
+            <h4 id="luckycolor"></h4>
+            <div class="space" id="clr"></div>
+            <h4 id="luckrank"></h4>
+            <div class="space ranks" id="rk"></div>
 
 
         </div>
     </div>
-    </form>
 </div>
 
 

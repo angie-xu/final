@@ -15,7 +15,7 @@ if (!$conn) {
 function get_ranking() {
     global $conn;
     // $rowCount = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) as total from rank"));
-    $randompull = rand(1, 11);
+    $randompull = rand(0, 11);
     $seek = mysqli_query($conn, "SELECT * from ranking ORDER BY id DESC");
     
     if(mysqli_num_rows($seek) > 0) {
